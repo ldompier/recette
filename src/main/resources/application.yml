@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: recette
+  datasource:
+    url: jdbc:postgresql://localhost:5432/recette_db
+    username: recette_user
+    password: recette_password
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+server:
+  port: 8080
