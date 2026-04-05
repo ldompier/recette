@@ -16,6 +16,24 @@ Application Spring Boot pour gerer des recettes avec PostgreSQL, JDBC SQL et Liq
 docker compose up -d
 ```
 
+Si vous obtenez une erreur de permission vers `/var/run/docker.sock` (frequent sur Linux/Manjaro), lancez:
+
+```bash
+sudo systemctl enable --now docker
+sudo systemctl status docker --no-pager
+sudo usermod -aG docker "$USER"
+newgrp docker
+```
+
+Puis retestez:
+
+```bash
+docker ps
+docker compose up -d
+```
+
+Si necessaire, faites un logout/login complet pour recharger les groupes de votre session.
+
 ## Demarrer l'application
 
 ```bash
